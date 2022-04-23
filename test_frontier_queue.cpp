@@ -113,3 +113,19 @@ TEST_CASE("Thorough replaceif test", "[frontier_queue]")
     REQUIRE(state.getFCost() == 3);
     REQUIRE(state.getPathCost() == 1);
 }
+
+TEST_CASE("Additional Test 1", "[frontier_queue]"){
+    frontier_queue<int> fq;
+
+    //Add random stuff
+    fq.push(3, 0, 0);
+    fq.push(4, 1, 0);
+    fq.push(6, 2, 0);
+    fq.push(5, 3, 0);
+
+    //is it still in list?
+    REQUIRE(3 == fq.pop().getValue());
+    REQUIRE(4 == fq.pop().getValue());
+    REQUIRE(6 == fq.pop().getValue());
+    REQUIRE(5 == fq.pop().getValue());
+}
